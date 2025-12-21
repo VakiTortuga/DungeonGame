@@ -94,5 +94,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\levels\" />
+    <Folder Include="assets\sprites\" />
+    <Folder Include="docs\diagrams\" />
+    <Folder Include="src\Game.Application\" />
+    <Folder Include="src\Game.Core\" />
+    <Folder Include="src\Game.Infrastructure\" />
+    <Folder Include="src\Game.UI\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
