@@ -1,12 +1,125 @@
-﻿<Window x:Class="DungeonGame.MainWindow"
+﻿<Window x:Class="Dungeon.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DungeonGame"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Dungeon Game"
+        Width="900"
+        Height="650"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
-        
+
+        <!-- ===================== -->
+        <!-- MAIN MENU -->
+        <!-- ===================== -->
+        <Grid Visibility="{Binding IsMainMenuVisible}">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="300">
+
+                <TextBlock Text="Dungeon Game"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <Button Content="New Game" Margin="0,5"/>
+                <Button Content="Continue Game" Margin="0,5"/>
+                <Button Content="Level Editor" Margin="0,5"/>
+                <Button Content="Exit" Margin="0,20"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- ===================== -->
+        <!-- GAME WINDOW -->
+        <!-- ===================== -->
+        <Grid Visibility="{Binding IsGameVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- MAP -->
+            <ItemsControl Grid.Column="0"
+                          ItemsSource="{Binding GameState.Tiles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="{Binding GameState.MapHeight}"
+                                     Columns="{Binding GameState.MapWidth}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Gray"
+                                BorderThickness="0.5"
+                                Width="30"
+                                Height="30"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- HUD -->
+            <StackPanel Grid.Column="1"
+                        Margin="10"
+                        VerticalAlignment="Top">
+
+                <TextBlock Text="Statistics"
+                           FontWeight="Bold"
+                           FontSize="16"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="Health: 100" Margin="0,5"/>
+                <TextBlock Text="Crystals: 0 / 5" Margin="0,5"/>
+
+                <Button Content="Pause" Margin="0,20"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- ===================== -->
+        <!-- EDITOR WINDOW -->
+        <!-- ===================== -->
+        <Grid Visibility="{Binding IsEditorVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <ItemsControl ItemsSource="{Binding EditorState.Tiles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="{Binding EditorState.MapHeight}"
+                                     Columns="{Binding EditorState.MapWidth}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <StackPanel Grid.Column="1"
+                        Margin="10">
+
+                <TextBlock Text="Palette"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+
+                <Button Content="Player" Margin="0,5"/>
+                <Button Content="Wall" Margin="0,5"/>
+                <Button Content="Trap" Margin="0,5"/>
+                <Button Content="Crystal" Margin="0,5"/>
+                <Button Content="Exit" Margin="0,20"/>
+
+                <Button Content="Save Level"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- ===================== -->
+        <!-- END GAME -->
+        <!-- ===================== -->
+        <Grid Visibility="{Binding IsEndGameVisible}">
+            <TextBlock Text="Victory / Defeat"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Grid>
+
     </Grid>
 </Window>
