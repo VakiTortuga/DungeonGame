@@ -55,12 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="src\Game.Application\DTOs\LevelInfoDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\SaveInfoDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\GameStateDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\PlayerStateDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\TileStateDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\EditorStateDTO.cs" />
+    <Compile Include="src\Game.Application\DTOs\AvailableEntityDTO.cs" />
     <Compile Include="src\Game.Application\enumerations\AppState.cs" />
     <Compile Include="src\Game.Application\enumerations\EntityVisualType.cs" />
     <Compile Include="src\Game.Application\enumerations\FacingDirection.cs" />
     <Compile Include="src\Game.Application\enumerations\GameStatus.cs" />
     <Compile Include="src\Game.Application\enumerations\LevelSourceType.cs" />
-    <Compile Include="src\Game.Application\enumerations\MoveDirection.cs" />
+    <Compile Include="src\Game.Application\ServiceInterfaces\IGameSessionService.cs" />
+    <Compile Include="src\Game.Application\ServiceInterfaces\ILevelEditorService.cs" />
+    <Compile Include="src\Game.Application\ServiceInterfaces\IMainMenuService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,14 +112,12 @@
   <ItemGroup>
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="src\Game.Application\DTOs\" />
-    <Folder Include="src\Game.Application\ServiceInterfaces\" />
     <Folder Include="src\Game.Core\" />
     <Folder Include="src\Game.Infrastructure\" />
     <Folder Include="src\Game.UI\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="docs\diagrams\Interfaces.png" />
+    <Resource Include="docs\diagrams\AppLayerInterface.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
