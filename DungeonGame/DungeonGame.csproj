@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="src\Game.Application\enumerations\AppState.cs" />
+    <Compile Include="src\Game.Application\enumerations\EntityVisualType.cs" />
+    <Compile Include="src\Game.Application\enumerations\FacingDirection.cs" />
+    <Compile Include="src\Game.Application\enumerations\GameStatus.cs" />
+    <Compile Include="src\Game.Application\enumerations\LevelSourceType.cs" />
+    <Compile Include="src\Game.Application\enumerations\MoveDirection.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,7 +104,6 @@
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
     <Folder Include="src\Game.Application\DTOs\" />
-    <Folder Include="src\Game.Application\enumerations\" />
     <Folder Include="src\Game.Application\ServiceInterfaces\" />
     <Folder Include="src\Game.Core\" />
     <Folder Include="src\Game.Infrastructure\" />
