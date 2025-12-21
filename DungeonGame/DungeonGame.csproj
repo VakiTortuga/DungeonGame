@@ -97,7 +97,9 @@
   <ItemGroup>
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="src\Game.Application\" />
+    <Folder Include="src\Game.Application\DTOs\" />
+    <Folder Include="src\Game.Application\enumerations\" />
+    <Folder Include="src\Game.Application\ServiceInterfaces\" />
     <Folder Include="src\Game.Core\" />
     <Folder Include="src\Game.Infrastructure\" />
     <Folder Include="src\Game.UI\" />
