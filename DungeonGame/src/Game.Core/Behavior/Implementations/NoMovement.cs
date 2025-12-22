@@ -1,4 +1,5 @@
-﻿using DungeonGame.src.Game.Core.BehaviorInterfaces;
+﻿using DungeonGame.src.Game.Application.enumerations;
+using DungeonGame.src.Game.Core.BehaviorInterfaces;
 using DungeonGame.src.Game.Core.enumerations;
 using System;
 using System.Collections.Generic;

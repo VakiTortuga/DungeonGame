@@ -5,4 +5,7 @@ BehaviorImplementations:
   TrapAttack
   WalkingMovement
 
+проверки ля клеток и карты в конструкторе
+
+сделать AI
 
