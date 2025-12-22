@@ -1,0 +1,8 @@
+Не забыть сделать
+
+BehaviorImplementations:
+  MeleeAttack
+  TrapAttack
+  WalkingMovement
+
+

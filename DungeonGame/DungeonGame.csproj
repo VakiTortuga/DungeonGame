@@ -70,6 +70,19 @@
     <Compile Include="src\Game.Application\ServiceInterfaces\IGameSessionService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\ILevelEditorService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\IMainMenuService.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\NoHealth.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\BasicHealth.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\NoMovement.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\WalkingMovement.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\NoAttack.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\MeleeAttack.cs" />
+    <Compile Include="src\Game.Core\BehaviorImplementations\TrapAttack.cs" />
+    <Compile Include="src\Game.Core\BehaviorInterfaces\IHealthBehavior.cs" />
+    <Compile Include="src\Game.Core\BehaviorInterfaces\IMoveBehavior.cs" />
+    <Compile Include="src\Game.Core\BehaviorInterfaces\IAttackBehavior.cs" />
+    <Compile Include="src\Game.Core\Entity.cs" />
+    <Compile Include="src\Game.Core\enumerations\EntityType.cs" />
+    <Compile Include="src\Game.Core\enumerations\FacingDirection.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,7 +125,6 @@
   <ItemGroup>
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="src\Game.Core\" />
     <Folder Include="src\Game.Infrastructure\" />
     <Folder Include="src\Game.UI\" />
   </ItemGroup>
