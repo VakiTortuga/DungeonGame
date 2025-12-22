@@ -1,5 +1,7 @@
-﻿using DungeonGame.src.Game.Core.BehaviorInterfaces;
+﻿using DungeonGame.src.Game.Application.enumerations;
+using DungeonGame.src.Game.Core.BehaviorInterfaces;
 using DungeonGame.src.Game.Core.enumerations;
+using DungeonGame.src.Game.Core.Cell.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
