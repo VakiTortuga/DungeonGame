@@ -46,7 +46,46 @@ namespace DungeonGame.src.Game.Core
             {
                 if (entity.EntityType == EntityType.Enemy && entity.IsAlive)
                 {
-                    // TODO: Реализовать логику AI
+                    // Простой AI: двигаться к игроку
+                    var enemyCell = entity.Location;
+                    var playerCell = session.Player.Location;
+
+                    // Определяем направление к игроку
+                    int deltaX = playerCell.X - enemyCell.X;
+                    int deltaY = playerCell.Y - enemyCell.Y;
+
+                    FacingDirection preferredDirection;
+
+                    // Предпочитаем движение по горизонтали, если возможно
+                    if (Math.Abs(deltaX) > Math.Abs(deltaY) && deltaX != 0)
+                    {
+                        preferredDirection = deltaX > 0 ? FacingDirection.Right : FacingDirection.Left;
+                    }
+                    else if (deltaY != 0)
+                    {
+                        preferredDirection = deltaY > 0 ? FacingDirection.Down : FacingDirection.Up;
+                    }
+                    else
+                    {
+                        continue; // Игрок на той же клетке
+                    }
+
+                    // Пытаемся двигаться
+                    entity.TryMove(preferredDirection);
+
+                    // Если можем атаковать - атакуем
+                    if (entity.CanAttack)
+                    {
+                        // Проверяем, рядом ли игрок
+                        var adjacentCell = entity.Location.GetMap()
+                            .GetCellByDirection(entity.Location, entity.FacingDirection);
+
+                        if (adjacentCell != null && adjacentCell.IsOccupied &&
+                            adjacentCell.GetEntity() == session.Player)
+                        {
+                            entity.TryAttack();
+                        }
+                    }
                 }
             }
         }
