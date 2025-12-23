@@ -10,7 +10,20 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
     internal class MeleeAttack : IAttackBehavior
     {
+        private readonly int damage;
+
         public bool CanAttack => true;
+
+        public MeleeAttack(int damage)
+        {
+            if (damage < 1)
+            {
+                throw new ArgumentOutOfRangeException(
+                    "MeleeAttack. Damage must be greater than 0."
+                    );
+            }
+            this.damage = damage;
+        }
 
         public bool TryAttack(Entity attacker)
         {
@@ -29,7 +42,7 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
                 targetEntity.EntityType == EntityType.Player)
             {
                 // Нанести урон
-                targetEntity.TakeDamage(10); // Примерный урон
+                targetEntity.TakeDamage(damage);
                 return true;
             }
 

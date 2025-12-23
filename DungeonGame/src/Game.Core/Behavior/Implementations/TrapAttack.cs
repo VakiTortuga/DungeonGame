@@ -11,8 +11,18 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
     internal class TrapAttack : IAttackBehavior
     {
+        private readonly int damage;
         public bool CanAttack => true;
-
+        public TrapAttack(int damage)
+        {
+            if (damage < 1)
+            {
+                throw new ArgumentOutOfRangeException(
+                    "MeleeAttack. Damage must be greater than 0."
+                    );
+            }
+            this.damage = damage;
+        }
         public bool TryAttack(Entity attacker)
         {
             // Ловушка атакует все сущности на соседних клетках
@@ -41,7 +51,7 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
                     if (targetEntity.EntityType == EntityType.Player ||
                         targetEntity.EntityType == EntityType.Enemy)
                     {
-                        targetEntity.TakeDamage(5); // Урон от ловушки
+                        targetEntity.TakeDamage(damage);
                         attacked = true;
                     }
                 }
