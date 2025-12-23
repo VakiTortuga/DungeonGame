@@ -178,6 +178,10 @@
     <Compile Include="src\Game.Application\ServiceInterfaces\IGameSessionService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\ILevelEditorService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\IMainMenuService.cs" />
+    <Compile Include="src\Game.Application\Services\AppState.cs" />
+    <Compile Include="src\Game.Application\Services\GameSessionService.cs" />
+    <Compile Include="src\Game.Application\Services\LevelEditorService.cs" />
+    <Compile Include="src\Game.Application\Services\MainMenuService.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\NoHealth.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\BasicHealth.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\NoMovement.cs" />
@@ -256,9 +260,6 @@
   <ItemGroup>
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
-    <Folder Include="src\Game.UI\" />
-    <Folder Include="src\Game.Core\" />
-    <Folder Include="src\Game.Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="docs\diagrams\AppLayerInterface.png" />
