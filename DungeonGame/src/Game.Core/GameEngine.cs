@@ -14,6 +14,9 @@ namespace DungeonGame.src.Game.Core
 
         public GameEngine(GameSession session)
         {
+            if (session == null)
+                throw new ArgumentNullException(nameof(session));
+
             this.session = session;
         }
 

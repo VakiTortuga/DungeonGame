@@ -11,6 +11,8 @@ namespace DungeonGame.src.Game.Core.MapObject.Interfaces
 {
     internal interface IMapToEntity
     {
+        int Width { get; }
+        int Height { get; }
         bool TryMoveEntity(ICellToMap from, ICellToMap to);
         ICellToMap GetCellByDirection(ICellToMap cell, FacingDirection direction);
         ICellToMap GetCell(int x, int y);

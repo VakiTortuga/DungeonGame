@@ -78,6 +78,7 @@ namespace DungeonGame.src.Game.Core
             {
                 if (value == null) 
                     throw new ArgumentNullException("Entity. Location can not be null.");
+                location = value;
             } 
         }
         public bool IsCollector { get; private set; }
@@ -120,7 +121,7 @@ namespace DungeonGame.src.Game.Core
 
         public bool TryAttack()
         {
-            return healthBehavior.IsAlive && attackBehavior.TryAttack(this);
+            return healthBehavior.IsAlive && CanAttack && attackBehavior.TryAttack(this);
         }
 
         public bool TakeDamage(int amount)

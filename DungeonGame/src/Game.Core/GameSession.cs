@@ -22,6 +22,13 @@ namespace DungeonGame.src.Game.Core
             Entity player,
             IEnumerable<Entity> entities)
         {
+            if (map == null)
+                throw new ArgumentNullException(nameof(map));
+            if (player == null)
+                throw new ArgumentNullException(nameof(player));
+            if (entities == null)
+                throw new ArgumentNullException(nameof(entities));
+
             Map = map;
             Player = player;
             this.entities = new List<Entity>(entities);
@@ -41,9 +48,14 @@ namespace DungeonGame.src.Game.Core
         {
             if (!Player.IsAlive)
                 Status = GameStatus.Defeat;
+            // TODO: Добавить логику победы
+            // else if (проверка_на_победу)
+            // {
+            //     Status = GameStatus.Victory;
+            // }
         }
 
         public IEnumerable<Entity> GetEntities()
-            => entities;
+            => entities.ToList(); // Создаем копию
     }
 }
