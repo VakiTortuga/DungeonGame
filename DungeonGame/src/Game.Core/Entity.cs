@@ -55,7 +55,7 @@ namespace DungeonGame.src.Game.Core
         }
 
         private int id;
-        private ICellToEntity location;
+        private ICellToMap location;
         private IHealthBehavior healthBehavior;
         private IMoveBehavior moveBehavior;
         private IAttackBehavior attackBehavior;
@@ -72,7 +72,7 @@ namespace DungeonGame.src.Game.Core
         }
         public EntityType EntityType { get;  private set; }
         public FacingDirection FacingDirection { get; private set; }
-        public ICellToEntity Location { 
+        public ICellToMap Location { 
             get { return location; }
             private set 
             {
@@ -94,7 +94,7 @@ namespace DungeonGame.src.Game.Core
             int id,
             EntityType entityType,
             FacingDirection facingDirection,
-            ICellToEntity location,
+            ICellToMap location,
             Behaviors behaviors
             )
         {
@@ -130,6 +130,20 @@ namespace DungeonGame.src.Game.Core
                 throw new ArgumentOutOfRangeException("Entity. Damage amount can not be less or equal to zero.");
 
             return healthBehavior.IsAlive && healthBehavior.TakeDamage(amount);
+        }
+        public void ChangeFacingDirection(FacingDirection newDirection)
+        {
+            if (newDirection == FacingDirection.None)
+                throw new ArgumentOutOfRangeException("Entity. Direction can not be none.");
+
+            FacingDirection = newDirection;
+        }
+        internal void SetLocation(ICellToMap newLocation)
+        {
+            if (newLocation == null)
+                throw new ArgumentNullException(nameof(newLocation));
+
+            Location = newLocation;
         }
     }
 }
