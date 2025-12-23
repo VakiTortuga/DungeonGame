@@ -112,8 +112,8 @@ namespace DungeonGame.src.Game.Core.MapObject
             from.RemoveEntity();
             to.PlaceEntity(entity);
 
-            // Обновить расположение сущности
-            // Для этого нужно добавить метод SetLocation в Entity
+            entity.SetLocation(to);
+
             return true;
         }
     }

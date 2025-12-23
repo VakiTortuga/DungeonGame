@@ -23,11 +23,11 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
 
             // Проверяем все 4 направления
             var directions = new[] {
-        FacingDirection.Up,
-        FacingDirection.Down,
-        FacingDirection.Left,
-        FacingDirection.Right
-    };
+                FacingDirection.Up,
+                FacingDirection.Down,
+                FacingDirection.Left,
+                FacingDirection.Right
+            };
 
             foreach (var direction in directions)
             {
