@@ -20,6 +20,9 @@ namespace DungeonGame.src.Game.Core.MapObject
 
         public MapObject(int width, int height)
         {
+            if (width <= 0 || height <= 0)
+                throw new ArgumentOutOfRangeException("Map dimensions must be positive");
+
             Width = width;
             Height = height;
 

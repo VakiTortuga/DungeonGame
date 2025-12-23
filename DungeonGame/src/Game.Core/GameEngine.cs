@@ -43,8 +43,7 @@ namespace DungeonGame.src.Game.Core
             {
                 if (entity.EntityType == EntityType.Enemy && entity.IsAlive)
                 {
-                    // примитивный AI
-                    entity.TryMove(FacingDirection.Left);
+                    // TODO: Реализовать логику AI
                 }
             }
         }

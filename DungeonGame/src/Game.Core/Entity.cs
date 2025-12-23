@@ -76,7 +76,7 @@ namespace DungeonGame.src.Game.Core
             get { return location; }
             private set 
             {
-                if (location == null) 
+                if (value == null) 
                     throw new ArgumentNullException("Entity. Location can not be null.");
             } 
         }

@@ -20,6 +20,11 @@ namespace DungeonGame.src.Game.Core.Cell
 
         public CellObject(int x, int y, IMapToEntity map)
         {
+            if (x < 0 || y < 0)
+                throw new ArgumentOutOfRangeException("Coordinates cannot be negative");
+            if (map == null)
+                throw new ArgumentNullException(nameof(map));
+
             X = x;
             Y = y;
             this.map = map;
