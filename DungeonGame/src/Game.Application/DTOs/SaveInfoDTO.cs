@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class SaveInfoDTO
+    public class SaveInfoDTO
     {
         public string SaveId { get; set; }
         public string LevelName { get; set; }

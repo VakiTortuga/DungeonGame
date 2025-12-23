@@ -7,7 +7,7 @@ using DungeonGame.src.Game.Application.enumerations;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class LevelInfoDTO
+    public class LevelInfoDTO
     {
         public string LevelId { get; set; }
         public string DisplayName { get; set; }

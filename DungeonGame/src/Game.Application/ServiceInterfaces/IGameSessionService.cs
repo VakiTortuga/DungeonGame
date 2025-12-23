@@ -8,7 +8,7 @@ using DungeonGame.src.Game.Application.DTOs;
 
 namespace DungeonGame.src.Game.Application.ServiceInterfaces
 {
-    internal interface IGameSessionService
+    public interface IGameSessionService
     {
         GameStateDTO MovePlayer(FacingDirection direction);
         GameStateDTO PlayerAttack();

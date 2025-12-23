@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class TileStateDTO
+    public class TileStateDTO
     {
         public int X {  get; set; }
         public int Y { get; set; }

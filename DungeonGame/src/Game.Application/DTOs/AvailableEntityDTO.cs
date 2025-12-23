@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class AvailableEntityDTO
+    public class AvailableEntityDTO
     {
         public EntityVisualType EntityType { get; set; }
         public string DisplayName { get; set; }

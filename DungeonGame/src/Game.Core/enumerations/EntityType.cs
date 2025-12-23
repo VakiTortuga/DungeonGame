@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonGame.src.Game.Application.enumerations
+namespace DungeonGame.src.Game.Core.enumerations
 {
-    public enum EntityVisualType
+    public enum EntityType
     {
         Player,
         Enemy,
         Wall,
         Trap,
         Crystal,
-        Exit,
-        Empty
+        Exit
     }
 }

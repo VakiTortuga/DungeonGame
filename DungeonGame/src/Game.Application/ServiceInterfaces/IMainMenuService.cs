@@ -8,7 +8,7 @@ using DungeonGame.src.Game.Application.DTOs;
 
 namespace DungeonGame.src.Game.Application.ServiceInterfaces
 {
-    internal interface IMainMenuService
+    public interface IMainMenuService
     {
         List<LevelInfoDTO> GetAvailableLevels();
         List<SaveInfoDTO> GetAvailibleSaves();
