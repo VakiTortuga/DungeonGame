@@ -16,11 +16,20 @@ namespace DungeonGame.src.Game.Core.BehaviorImplementations
         public bool TryMove(Entity entity, FacingDirection direction)
         {
             if (direction == FacingDirection.None)
-            {
                 throw new ArgumentOutOfRangeException("WalkingMovement. Entity can not move if direction is none.");
-            }
 
-            throw new NotImplementedException();
+            // Реализация:
+            var currentCell = entity.Location;
+            var map = currentCell.GetMap();
+            var targetCell = map.GetCellByDirection(currentCell, direction);
+
+            if (targetCell == null || targetCell.IsOccupied)
+                return false;
+
+            // Проверка, можно ли войти в клетку (например, не в стену)
+            // Логика движения...
+
+            return map.TryMoveEntity(currentCell, targetCell);
         }
     }
 }
