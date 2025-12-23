@@ -178,6 +178,10 @@
     <Compile Include="src\Game.Application\ServiceInterfaces\IGameSessionService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\ILevelEditorService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\IMainMenuService.cs" />
+    <Compile Include="src\Game.UI\BaseViewModel.cs" />
+    <Compile Include="src\Game.UI\GameWindowVM.cs" />
+    <Compile Include="src\Game.UI\InitialWindowVM.cs" />
+    <Compile Include="src\Game.UI\RelayCommand.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\NoHealth.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\BasicHealth.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\NoMovement.cs" />
@@ -250,6 +254,8 @@
   <ItemGroup>
     <Folder Include="assets\levels\" />
     <Folder Include="assets\sprites\" />
+    <Folder Include="src\Game.Core\" />
+    <Folder Include="src\Game.Infrastructure\" />
     <Folder Include="src\Game.UI\" />
   </ItemGroup>
   <ItemGroup>
