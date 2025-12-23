@@ -181,6 +181,7 @@
     <Compile Include="src\Game.UI\BaseViewModel.cs" />
     <Compile Include="src\Game.UI\GameWindowVM.cs" />
     <Compile Include="src\Game.UI\InitialWindowVM.cs" />
+    <Compile Include="src\Game.UI\PauseMenuVM.cs" />
     <Compile Include="src\Game.UI\RelayCommand.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\NoHealth.cs" />
     <Compile Include="src\Game.Core\Behavior\Implementations\BasicHealth.cs" />
