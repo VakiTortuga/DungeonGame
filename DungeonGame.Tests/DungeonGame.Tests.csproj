@@ -54,15 +54,14 @@
     <Compile Include="Core\FactoryTest.cs" />
     <Compile Include="Core\GameEngineTest.cs" />
     <Compile Include="Core\SessionTest.cs" />
+    <Compile Include="Infrastructure\RepositoryTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Inrastructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DungeonGame\DungeonGame.csproj">
       <Project>{e1086883-cabf-4a3e-a71b-9feba797b95c}</Project>
