@@ -14,6 +14,7 @@ namespace DungeonGame.src.Game.Core
         public IMapToEntity Map { get; }
         public Entity Player { get; }
         public int CollectedCrystals { get; private set; }
+        public int InitialCrystals { get; private set; }
         public GameStatus Status { get; private set; }
 
         private readonly List<Entity> entities;
@@ -21,7 +22,9 @@ namespace DungeonGame.src.Game.Core
         public GameSession(
             IMapToEntity map,
             Entity player,
-            IEnumerable<Entity> entities)
+            IEnumerable<Entity> entities,
+            int collectedCrystals = 0
+            )
         {
             if (map == null)
                 throw new ArgumentNullException(nameof(map));
@@ -29,11 +32,15 @@ namespace DungeonGame.src.Game.Core
                 throw new ArgumentNullException(nameof(player));
             if (entities == null)
                 throw new ArgumentNullException(nameof(entities));
+            if (collectedCrystals < 0)
+                throw new ArgumentOutOfRangeException(nameof(collectedCrystals));
+
 
             Map = map;
             Player = player;
             this.entities = new List<Entity>(entities);
             Status = GameStatus.Playing;
+            CollectedCrystals = collectedCrystals;
         }
 
         public void AddEntity(Entity entity)

@@ -8,4 +8,13 @@ BehaviorImplementations:
 проверки ля клеток и карты в конструкторе
 
 сделать AI
+реализация движения
+атака ловушки и атака обычная
+обновление статуса
+CanEnterCell
 
+сделать конструкторы для MeleeAttack и TrapAttack
+
+инишал кристалс в GameSession
+SaveGameMapper FromDTO рестор хелф
+FileLevelRepository проверить реализацию
