@@ -82,6 +82,8 @@
     <Compile Include="src\Game.Core\Behavior\Interfaces\IAttackBehavior.cs" />
     <Compile Include="src\Game.Core\Cell\CellObject.cs" />
     <Compile Include="src\Game.Core\Entity.cs" />
+    <Compile Include="src\Game.Core\EntityFactory\HardcodedEntityFactory.cs" />
+    <Compile Include="src\Game.Core\EntityFactory\Interface\IEntityFactory.cs" />
     <Compile Include="src\Game.Core\enumerations\EntityType.cs" />
     <Compile Include="src\Game.Core\Cell\Interfaces\ICellToEntity.cs" />
     <Compile Include="src\Game.Core\Cell\Interfaces\ICellToMap.cs" />
