@@ -70,6 +70,10 @@
     <Compile Include="src\Game.Application\ServiceInterfaces\IGameSessionService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\ILevelEditorService.cs" />
     <Compile Include="src\Game.Application\ServiceInterfaces\IMainMenuService.cs" />
+    <Compile Include="src\Game.UI\BaseViewModel.cs" />
+    <Compile Include="src\Game.UI\GameWindowVM.cs" />
+    <Compile Include="src\Game.UI\InitialWindowVM.cs" />
+    <Compile Include="src\Game.UI\RelayCommand.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,7 +118,6 @@
     <Folder Include="assets\sprites\" />
     <Folder Include="src\Game.Core\" />
     <Folder Include="src\Game.Infrastructure\" />
-    <Folder Include="src\Game.UI\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="docs\diagrams\AppLayerInterface.png" />
