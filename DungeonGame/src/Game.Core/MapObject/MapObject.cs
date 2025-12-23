@@ -73,12 +73,38 @@ namespace DungeonGame.src.Game.Core.MapObject
             return result;
         }
 
+        public bool CanEnterCell(ICellToMap cell)
+        {
+            if (cell == null || cell.IsOccupied)
+                return false;
+
+            // Проверка, нет ли стены или другого непроходимого объекта
+            var entity = cell.GetEntity();
+            if (entity != null)
+            {
+                switch (entity.EntityType)
+                {
+                    case EntityType.Wall:
+                        return false;
+                    case EntityType.Exit:
+                    case EntityType.Crystal:
+                    case EntityType.Trap:
+                        return true; // Эти объекты проходимы
+                    default:
+                        return !entity.IsMovable; // Если сущность не подвижна, нельзя войти
+                }
+            }
+
+            return true;
+        }
+
+        // Обновить TryMoveEntity
         public bool TryMoveEntity(ICellToMap from, ICellToMap to)
         {
             if (from == null || to == null)
                 return false;
 
-            if (!from.IsOccupied || to.IsOccupied)
+            if (!from.IsOccupied || !CanEnterCell(to))
                 return false;
 
             var entity = from.GetEntity();
@@ -86,6 +112,8 @@ namespace DungeonGame.src.Game.Core.MapObject
             from.RemoveEntity();
             to.PlaceEntity(entity);
 
+            // Обновить расположение сущности
+            // Для этого нужно добавить метод SetLocation в Entity
             return true;
         }
     }
