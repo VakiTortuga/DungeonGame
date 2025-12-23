@@ -11,7 +11,7 @@
         <!-- ===================== -->
         <!-- MAIN MENU -->
         <!-- ===================== -->
-        <Grid Visibility="{Binding IsMainMenuVisible}">
+        <Grid>
             <StackPanel HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Width="300">
@@ -22,40 +22,51 @@
                            HorizontalAlignment="Center"
                            Margin="0,0,0,20"/>
 
-                <Button Content="New Game" Margin="0,5"/>
-                <Button Content="Continue Game" Margin="0,5"/>
-                <Button Content="Level Editor" Margin="0,5"/>
-                <Button Content="Exit" Margin="0,20"/>
+                <Button Content="Start New Game"
+                        Margin="0,5"/>
+
+                <Button Content="Continue Game"
+                        Margin="0,5"/>
+
+                <Button Content="Open Editor"
+                        Margin="0,5"/>
+
+                <Button Content="Exit"
+                        Margin="0,20"/>
             </StackPanel>
         </Grid>
 
         <!-- ===================== -->
         <!-- GAME WINDOW -->
         <!-- ===================== -->
-        <Grid Visibility="{Binding IsGameVisible}">
+        <Grid Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="220"/>
             </Grid.ColumnDefinitions>
 
-            <!-- MAP -->
-            <ItemsControl Grid.Column="0"
-                          ItemsSource="{Binding GameState.Tiles}">
+            <!-- EMPTY GRID 20x20 -->
+            <ItemsControl Grid.Column="0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Rows="{Binding GameState.MapHeight}"
-                                     Columns="{Binding GameState.MapWidth}"/>
+                        <UniformGrid Rows="20" Columns="20"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Gray"
+                        <Border Width="30"
+                                Height="30"
+                                BorderBrush="Gray"
                                 BorderThickness="0.5"
-                                Width="30"
-                                Height="30"/>
+                                Background="#F5F5F5"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
+
+                <!-- 400 пустых ячеек -->
+                <ItemsControl.Items>
+                    <sys:Int32 xmlns:sys="clr-namespace:System;assembly=mscorlib">0</sys:Int32>
+                </ItemsControl.Items>
             </ItemsControl>
 
             <!-- HUD -->
@@ -64,57 +75,71 @@
                         VerticalAlignment="Top">
 
                 <TextBlock Text="Statistics"
-                           FontWeight="Bold"
                            FontSize="16"
+                           FontWeight="Bold"
                            Margin="0,0,0,10"/>
 
                 <TextBlock Text="Health: 100" Margin="0,5"/>
                 <TextBlock Text="Crystals: 0 / 5" Margin="0,5"/>
 
-                <Button Content="Pause" Margin="0,20"/>
+                <Button Content="Attack" Margin="0,10"/>
+                <Button Content="Pause" Margin="0,5"/>
+                <Button Content="Save and Exit" Margin="0,20"/>
             </StackPanel>
         </Grid>
 
         <!-- ===================== -->
         <!-- EDITOR WINDOW -->
         <!-- ===================== -->
-        <Grid Visibility="{Binding IsEditorVisible}">
+        <Grid Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="220"/>
             </Grid.ColumnDefinitions>
 
-            <ItemsControl ItemsSource="{Binding EditorState.Tiles}">
+            <!-- EMPTY GRID 20x20 -->
+            <ItemsControl Grid.Column="0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Rows="{Binding EditorState.MapHeight}"
-                                     Columns="{Binding EditorState.MapWidth}"/>
+                        <UniformGrid Rows="20" Columns="20"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="30"
+                                Height="30"
+                                BorderBrush="Gray"
+                                BorderThickness="0.5"
+                                Background="#F5F5F5"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+                <ItemsControl.Items>
+                    <sys:Int32 xmlns:sys="clr-namespace:System;assembly=mscorlib">0</sys:Int32>
+                </ItemsControl.Items>
             </ItemsControl>
 
             <StackPanel Grid.Column="1"
                         Margin="10">
 
-                <TextBlock Text="Palette"
+                <TextBlock Text="Editor"
+                           FontSize="16"
                            FontWeight="Bold"
                            Margin="0,0,0,10"/>
 
-                <Button Content="Player" Margin="0,5"/>
-                <Button Content="Wall" Margin="0,5"/>
-                <Button Content="Trap" Margin="0,5"/>
-                <Button Content="Crystal" Margin="0,5"/>
-                <Button Content="Exit" Margin="0,20"/>
-
-                <Button Content="Save Level"/>
+                <Button Content="Create New Level" Margin="0,5"/>
+                <Button Content="Load Level" Margin="0,5"/>
+                <Button Content="Save Level" Margin="0,20"/>
+                <Button Content="Exit Editor"/>
             </StackPanel>
         </Grid>
 
         <!-- ===================== -->
-        <!-- END GAME -->
+        <!-- EXIT -->
         <!-- ===================== -->
-        <Grid Visibility="{Binding IsEndGameVisible}">
-            <TextBlock Text="Victory / Defeat"
+        <Grid Visibility="Collapsed">
+            <TextBlock Text="Exit"
                        FontSize="28"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
