@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DungeonGame.src.Game.Infrastructure.DTOs
 {
     [Serializable]
-    internal class SaveGameDTO
+    public class SaveGameDTO
     {
         public int MapWidth;
         public int MapHeight;

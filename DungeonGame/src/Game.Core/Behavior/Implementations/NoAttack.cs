@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class NoAttack : IAttackBehavior
+    public class NoAttack : IAttackBehavior
     {
         public bool CanAttack => false;
 

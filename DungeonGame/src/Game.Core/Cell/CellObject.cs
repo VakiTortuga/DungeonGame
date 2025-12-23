@@ -8,7 +8,7 @@ using DungeonGame.src.Game.Core.MapObject.Interfaces;
 
 namespace DungeonGame.src.Game.Core.Cell
 {
-    internal class CellObject : ICellToMap, ICellToEntity
+    public class CellObject : ICellToMap, ICellToEntity
     {
         private Entity entity;
         private readonly IMapToEntity map;

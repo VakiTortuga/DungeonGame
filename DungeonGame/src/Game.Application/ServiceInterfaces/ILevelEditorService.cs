@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace DungeonGame.src.Game.Application.ServiceInterfaces
 {
-    internal interface ILevelEditorService
+    public interface ILevelEditorService
     {
         EditorStateDTO CreateNewLevel();
         EditorStateDTO LoadLevel(string levelId);

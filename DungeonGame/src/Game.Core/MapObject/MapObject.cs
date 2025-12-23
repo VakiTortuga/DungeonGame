@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.MapObject
 {
-    internal class MapObject : IMapToEntity
+    public class MapObject : IMapToEntity
     {
         private readonly CellObject[,] cells;
 

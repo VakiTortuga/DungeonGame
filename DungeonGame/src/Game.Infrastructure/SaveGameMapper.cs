@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Infrastructure
 {
-    internal static class SaveGameMapper
+    public static class SaveGameMapper
     {
         private static IEntityFactory entityFactory;
 

@@ -9,7 +9,7 @@ using DungeonGame.src.Game.Core;
 
 namespace DungeonGame.src.Game.Infrastructure.Repository.Implementation
 {
-    internal class FileSaveGameRepository : ISaveGameRepository
+    public class FileSaveGameRepository : ISaveGameRepository
     {
         private const string Path = "savegame.json";
 

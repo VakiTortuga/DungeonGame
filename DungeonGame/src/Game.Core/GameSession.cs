@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core
 {
-    internal class GameSession
+    public class GameSession
     {
         public IMapToEntity Map { get; }
         public Entity Player { get; }

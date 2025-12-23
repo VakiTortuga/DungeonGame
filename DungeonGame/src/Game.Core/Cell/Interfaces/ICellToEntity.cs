@@ -7,7 +7,7 @@ using DungeonGame.src.Game.Core.MapObject.Interfaces;
 
 namespace DungeonGame.src.Game.Core.Cell.Interfaces
 {
-    internal interface ICellToEntity
+    public interface ICellToEntity
     {
         int X { get; }
         int Y { get; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.EntityFactory.Interface
 {
-    internal interface IEntityFactory
+    public interface IEntityFactory
     {
         Entity Create(EntityType type, ICellToMap startCell);
     }

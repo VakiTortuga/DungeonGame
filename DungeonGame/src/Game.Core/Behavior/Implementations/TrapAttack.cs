@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class TrapAttack : IAttackBehavior
+    public class TrapAttack : IAttackBehavior
     {
         private readonly int damage;
         public bool CanAttack => true;

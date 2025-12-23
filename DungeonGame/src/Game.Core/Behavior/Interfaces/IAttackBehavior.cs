@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorInterfaces
 {
-    internal interface IAttackBehavior
+    public interface IAttackBehavior
     {
         bool CanAttack { get; }
         bool TryAttack(Entity attacker);

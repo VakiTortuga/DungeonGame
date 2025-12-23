@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class WalkingMovement : IMoveBehavior
+    public class WalkingMovement : IMoveBehavior
     {
         public bool IsMovable => true;
 

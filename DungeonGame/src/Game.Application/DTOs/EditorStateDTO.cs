@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class EditorStateDTO
+    public class EditorStateDTO
     {
         public int MapWidth { get; set; }
         public int MapHeight { get; set; }

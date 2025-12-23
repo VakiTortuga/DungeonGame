@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class MeleeAttack : IAttackBehavior
+    public class MeleeAttack : IAttackBehavior
     {
         private readonly int damage;
 

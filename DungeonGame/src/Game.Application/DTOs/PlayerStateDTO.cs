@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class PlayerStateDTO
+    public class PlayerStateDTO
     {
         public int Health {  get; set; }
         public int MaxHealth { get; set; }

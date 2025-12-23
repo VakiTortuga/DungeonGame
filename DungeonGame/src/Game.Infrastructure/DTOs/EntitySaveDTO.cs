@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DungeonGame.src.Game.Infrastructure.DTOs
 {
     [Serializable]
-    internal class EntitySaveDTO
+    public class EntitySaveDTO
     {
         public int Id;
         public EntityType Type;

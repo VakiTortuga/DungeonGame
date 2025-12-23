@@ -7,7 +7,7 @@ using DungeonGame.src.Game.Core.BehaviorInterfaces;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class NoHealth : IHealthBehavior
+    public class NoHealth : IHealthBehavior
     {
         public bool IsAlive => true;
 

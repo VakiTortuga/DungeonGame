@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core
 {
-    internal class GameEngine
+    public class GameEngine
     {
         private readonly GameSession session;
 

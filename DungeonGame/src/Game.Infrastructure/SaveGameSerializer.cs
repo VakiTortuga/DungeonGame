@@ -8,7 +8,7 @@ using DungeonGame.src.Game.Infrastructure.DTOs;
 
 namespace DungeonGame.src.Game.Infrastructure
 {
-    internal static class SaveGameSerializer
+    public static class SaveGameSerializer
     {
         public static string Serialize(SaveGameDTO dto)
         {

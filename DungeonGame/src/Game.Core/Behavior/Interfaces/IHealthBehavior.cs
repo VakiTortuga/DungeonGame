@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorInterfaces
 {
-    internal interface IHealthBehavior
+    public interface IHealthBehavior
     {
         bool IsAlive { get; }
         int GetHealth { get; }

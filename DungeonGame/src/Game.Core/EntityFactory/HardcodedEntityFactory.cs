@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.EntityFactory
 {
-    internal class HardcodedEntityFactory : IEntityFactory
+    public class HardcodedEntityFactory : IEntityFactory
     {
         private int nextId = 1;
 

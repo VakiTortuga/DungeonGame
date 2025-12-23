@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorImplementations
 {
-    internal class BasicHealth : IHealthBehavior
+    public class BasicHealth : IHealthBehavior
     {
         private int maxHealth;
         private int currentHealth;

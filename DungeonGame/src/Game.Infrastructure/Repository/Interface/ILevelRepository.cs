@@ -7,7 +7,7 @@ using DungeonGame.src.Game.Core;
 
 namespace DungeonGame.src.Game.Infrastructure.Repository.Interface
 {
-    internal interface ILevelRepository
+    public interface ILevelRepository
     {
         IEnumerable<GameSession> GetAll();
         GameSession Get(string id);

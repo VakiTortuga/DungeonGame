@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.BehaviorInterfaces
 {
-    internal interface IMoveBehavior
+    public interface IMoveBehavior
     {
         bool IsMovable { get; }
         bool TryMove(Entity entity, FacingDirection facingDirection);

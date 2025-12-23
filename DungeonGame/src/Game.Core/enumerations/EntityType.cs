@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.enumerations
 {
-    internal enum EntityType
+    public enum EntityType
     {
         Player,
         Enemy,

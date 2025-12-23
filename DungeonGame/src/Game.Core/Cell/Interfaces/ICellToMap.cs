@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.Cell.Interfaces
 {
-    internal interface ICellToMap
+    public interface ICellToMap
     {
         int X { get; }
         int Y { get; }

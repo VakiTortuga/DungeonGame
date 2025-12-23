@@ -7,7 +7,7 @@ using DungeonGame.src.Game.Core;
 
 namespace DungeonGame.src.Game.Infrastructure.Repository.Interface
 {
-    internal interface ISaveGameRepository
+    public interface ISaveGameRepository
     {
         void Save(GameSession session);
         GameSession Load();

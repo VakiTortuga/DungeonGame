@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core.MapObject.Interfaces
 {
-    internal interface IMapToEntity
+    public interface IMapToEntity
     {
         int Width { get; }
         int Height { get; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Core
 {
-    internal class Entity
+    public class Entity
     {
         public class Behaviors
         {

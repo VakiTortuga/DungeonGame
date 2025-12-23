@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Infrastructure.Repository.Implementation
 {
-    internal class FileLevelRepository : ILevelRepository
+    public class FileLevelRepository : ILevelRepository
     {
         private const string LevelsDirectory = "Levels";
         private const string FileExtension = ".json";
