@@ -1,4 +1,5 @@
 ﻿using DungeonGame.src.Game.Application.enumerations;
+using DungeonGame.src.Game.Core.enumerations;
 using DungeonGame.src.Game.Core.MapObject.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -47,12 +48,43 @@ namespace DungeonGame.src.Game.Core
         public void UpdateStatus()
         {
             if (!Player.IsAlive)
+            {
                 Status = GameStatus.Defeat;
-            // TODO: Добавить логику победы
-            // else if (проверка_на_победу)
-            // {
-            //     Status = GameStatus.Victory;
-            // }
+                return;
+            }
+
+            // Проверка победы: достиг ли игрок выхода
+            var playerCell = Player.Location;
+            var entitiesOnCell = GetEntitiesOnCell(playerCell.X, playerCell.Y);
+
+            foreach (var entity in entitiesOnCell)
+            {
+                if (entity.EntityType == EntityType.Exit)
+                {
+                    Status = GameStatus.Victory;
+                    return;
+                }
+                else if (entity.EntityType == EntityType.Crystal && entity.IsCollectable)
+                {
+                    CollectCrystal();
+                    RemoveEntity(entity); // Кристалл исчезает после сбора
+                }
+            }
+
+            // Альтернативная логика победы: собрать все кристаллы
+            int totalCrystals = entities.Count(e => e.EntityType == EntityType.Crystal);
+            if (totalCrystals == 0 && CollectedCrystals > 0)
+            {
+                Status = GameStatus.Victory;
+            }
+        }
+
+        private IEnumerable<Entity> GetEntitiesOnCell(int x, int y)
+        {
+            return entities.Where(e =>
+                e.Location != null &&
+                e.Location.X == x &&
+                e.Location.Y == y);
         }
 
         public IEnumerable<Entity> GetEntities()
