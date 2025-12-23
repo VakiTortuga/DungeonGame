@@ -52,6 +52,7 @@
     <Compile Include="Core\BehaviorTest.cs" />
     <Compile Include="Core\EntityTest.cs" />
     <Compile Include="Core\FactoryTest.cs" />
+    <Compile Include="Core\SessionTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
