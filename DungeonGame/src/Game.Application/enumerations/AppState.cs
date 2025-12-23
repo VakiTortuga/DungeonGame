@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.enumerations
 {
-    internal enum AppState
+    public enum AppState
     {
         MainMenu,
         Game,

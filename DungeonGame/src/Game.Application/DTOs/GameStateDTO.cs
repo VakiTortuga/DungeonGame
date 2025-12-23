@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DungeonGame.src.Game.Application.DTOs
 {
-    internal class GameStateDTO
+    public class GameStateDTO
     {
         public int MapWidth { get; set; }
         public int MapHeight { get; set; }
