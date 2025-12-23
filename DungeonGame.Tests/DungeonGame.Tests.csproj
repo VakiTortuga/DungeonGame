@@ -56,7 +56,6 @@
     <Compile Include="Core\SessionTest.cs" />
     <Compile Include="Infrastructure\RepositoryTest.cs" />
     <Compile Include="Infrastructure\SaveFileTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
